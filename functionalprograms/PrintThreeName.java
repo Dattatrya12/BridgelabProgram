@@ -2,10 +2,9 @@ package com.bridgelabz.functionalprograms;
 
 import com.utility.Utility;
 
-public class PrintThreeNames {
+public class PrintThreeName {
 
-	public static void main(String[] args) {
-		System.out.println("Enter your Name:");
+	public static void main(String[] args)throws Exception {
 		// TODO Auto-generated method stub
 		Utility.getThreeNames();
 

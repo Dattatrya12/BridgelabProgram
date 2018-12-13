@@ -2,13 +2,12 @@ package com.bridgelabz.functionalprograms;
 
 import com.utility.Utility;
 
-public class PrintThreeNames {
+public class Power {
 
 	public static void main(String[] args) {
-		System.out.println("Enter your Name:");
 		// TODO Auto-generated method stub
-		Utility.getThreeNames();
-
+		System.out.println("Enter a number:");
+              Utility.getPowerOfTwo();
 	}
 
 }

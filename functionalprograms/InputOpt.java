@@ -2,13 +2,11 @@ package com.bridgelabz.functionalprograms;
 
 import com.utility.Utility;
 
-public class PrintThreeNames {
+public class InputOpt {
 
 	public static void main(String[] args) {
-		System.out.println("Enter your Name:");
 		// TODO Auto-generated method stub
-		Utility.getThreeNames();
-
+          Utility.getInputOpt(2, 3, 4);
 	}
 
 }
