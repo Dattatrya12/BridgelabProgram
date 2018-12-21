@@ -1,0 +1,22 @@
+package com.bridgelabz.functionalandlibaries;
+
+public class FindSqrt1 {
+	 public static void main(String[] args) {
+
+	        // parse command-line arguments
+	        double[] a = new double[args.length];
+	        for (int i = 0; i < args.length; i++) {
+	            a[i] = Double.parseDouble(args[i]);
+	        }
+
+	        // compute square root for each command line parameter
+	        for (int i = 0; i < a.length; i++) {
+	            double x = sqrt(a[i]);
+	            System.out.println(x);
+	        }
+	    }
+
+	}
+	
+
+

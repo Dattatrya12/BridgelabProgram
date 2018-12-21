@@ -324,8 +324,105 @@ static Scanner scan = new Scanner(System.in);
 			}
 			return factorial;
 		}
+		/**
+		 * @param n take integer from user
+		 * @param take list of array from user
+		 * @return maximum value 
+		 */
+		
+		public static int maxValue(int n, int[] arry) {
+			int max = arry[0];
+			
+			
+			for(int i = 0 ; i <  arry.length ; i++ ) {
+					if(arry[i] > max) {
+						max = arry[i];
+					}
+				
+			}
+			return max;
+		}
 
-		 
+		/**
+		 * @param n taking integer from user
+		 * @param taking list of array from user 
+		 * @return minimum value 
+		 */
+		
+		public static int toFindMinValue(int n, int[] arry) {
+			int temp;
+			
+			
+			
+			for(int i = 0 ; i <  arry.length ; i++ ) {
+				for(int j = i+1 ; j < arry.length ; j++) {
+					if(arry[i] > arry[j]) {
+						temp = arry[i];
+						arry[i] = arry[j];
+						arry[j] = temp;
+	 				}
+
+				}
+					
+					}
+			return arry[0];
+				
+	}
+		/**
+		 * @param n take integer from user
+		 * @param take list of array from user
+		 * @return maximum value 
+		 */
+		
+		public static int toFindMaxValue(int n, int[] arry) {
+			int max = arry[0];
+			
+			
+			for(int i = 0 ; i <  arry.length ; i++ ) {
+					if(arry[i] > max) {
+						max = arry[i];
+					}
+				
+			}
+			return max;
+	}
+		 // function check whether a number  
+	    // is prime or not 
+	    public static boolean isPrime(int n) 
+	    { 
+	        // Corner case 
+	        if (n <= 1) 
+	            return false; 
+	       
+	        // Check from 2 to n-1 
+	        for (int i = 2; i < n; i++) 
+	            if (n % i == 0) 
+	                return false; 
+	       
+	        return true; 
+	    } 
+	 // return the square root of c, computed using Newton's method
+	    public static double sqrt(double c) {
+	        if (c < 0) return Double.NaN;
+	        double EPSILON = 1E-15;
+	        double t = c;
+	        while (Math.abs(t - c/t) > EPSILON*t)
+	            t = (c/t + t) / 2.0;
+	        return t;
+	    }
+
+	    // overloaded version in which user specifies the error tolerance epsilon
+	    public static double sqrt(double c, double epsilon) {
+	        if (c < 0) return Double.NaN;
+	        double t = c;
+	        while (Math.abs(t - c/t) > epsilon*t)
+	            t = (c/t + t) / 2.0;
+	        return t;
+	    }
+
+	      
+		
+	    
 }
 
 	
