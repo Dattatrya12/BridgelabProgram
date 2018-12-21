@@ -230,7 +230,7 @@ static Scanner scan = new Scanner(System.in);
 	        int d = (day + x + (31*m)/12) % 7;
 	        return d;
 	    }
-/***********************************MathFunctions PartOfWeek1 Harmonic*************/
+
 	    // return true if the given year is a leap year
 	    public static boolean isLeapYear(int year) {
 	        if  ((year % 4 == 0) && (year % 100 != 0)) return true;
@@ -251,7 +251,7 @@ static Scanner scan = new Scanner(System.in);
                 }
 		return result;
    	    }
-	  //************************MathFunction PartOfWeek1 SinAndCosAngle******************************
+	  //************************MathFunction4***************************************
 
 		/**
 		 * @param x take double from user
@@ -271,7 +271,6 @@ static Scanner scan = new Scanner(System.in);
 			//double q = Math.toDegrees(x2);
 			//return q;
 	}
-    /*******************MathFunctions PartOfWeek1 DecimalToBinary******/
 	    public static String decimalToBinary(int x)
 
 	    {
@@ -291,7 +290,6 @@ static Scanner scan = new Scanner(System.in);
 	        return "";
 
 	    }
-	    /*MathFunctions PartOfWeek1 Sqrt******************/
 	    public static double getSqrt(double c) {
 	 		
 	 		double e = 1e-15;
@@ -313,7 +311,6 @@ static Scanner scan = new Scanner(System.in);
 	 		
 	  
 	    }
-	    /******************MathFunctions PartOfWeek1 Factorial**************/
 
 		public static int getFactorial()
 		{
@@ -327,7 +324,6 @@ static Scanner scan = new Scanner(System.in);
 			}
 			return factorial;
 		}
-		/***********MathFunctions PartOfWeek1 findMinAndMaxValue***********
 		/**
 		 * @param n take integer from user
 		 * @param take list of array from user
@@ -390,7 +386,6 @@ static Scanner scan = new Scanner(System.in);
 			}
 			return max;
 	}
-		/*********************MathFunctions PartOfWeek PrimeNumber******/
 		 // function check whether a number  
 	    // is prime or not 
 	    public static boolean isPrime(int n) 
@@ -424,120 +419,8 @@ static Scanner scan = new Scanner(System.in);
 	            t = (c/t + t) / 2.0;
 	        return t;
 	    }
-/****************************MathFunction Future value*****************
-	    /**
-		 * @param c take float from user
-		 * @param r take float from user
-		 * @param t take float from user
-		 * @return value by using formula
-		 */
-		
-		public static double futureValue(float c, float r, float t) {
-			double value;
-			float c1;
-			float r1;
-			float t1;
-			if(c<0 || r<0 || t<0) {
-				System.out.println("please enter positive value: ");
-				System.out.println("Enter invested dollars: ");
-				 c1 = MathFunctions.getFloat();
-				System.out.println("Enter interest rate: ");
-				r1 = MathFunctions.getFloat();
-				System.out.println("Enter time period: ");
-				t1 = MathFunctions.getFloat();
-			}else {
-			 value = (c*Math.pow((1+r), t));
-				return value;
 
-			}
-			return MathFunctions.futureValue(c1 , r1, t1);
-
-
-			
-		}
-		
-		//**************************MathFunction PresentValue****************************************
-
-		/**
-		 * @param c take float from user
-		 * @param r take float from user
-		 * @param t take float from user
-		 * @return value by using formula
-		 */
-		
-		public static double presentValue(float c, float r, float t) {
-			double value;
-			float c1;
-			float r1;
-			float t1;
-			if(c<0 || r<0 || t<0) {
-				System.out.println("please enter positive value: ");
-				System.out.println("Enter invest dollars: ");
-				 c1 = MathFunctions.getFloat();
-				System.out.println("Enter interest rate: ");
-				r1 = MathFunctions.getFloat();
-				System.out.println("Enter time period: ");
-				t1 = MathFunctions.getFloat();
-			}else {
-			 value = (c/Math.pow((1+r), t));
-				return value;
-
-			}
-			return MathFunctions.futureValue(c1 , r1, t1);
-
-	}
-		/*************MathFunctions CheckColinear*****************/
-		/**
-		 * @param x1 take integer from user
-		 * @param x2 take integer from user
-		 * @param x3 take integer from user
-		 * @param y1 take integer from user
-		 * @param y2 take integer from user
-		 * @param y3 take integer from user
-		 * @return true if points are collinear and false if points are not collinear
-		 */
-		
-		public static  boolean isSlope(int x1, int x2, int x3, int y1, int y2, int y3) {
-			int slopAB = 0;
-			int slopAC = 0;
-			int slopBC = 0;
-			try {
-				 slopAB = (y2 - y1)/(x2 - x1);
-				 slopBC = (y3 - y2)/(x3 - x2);
-				 slopAC = (y1 - y3)/(x1 - x3);
-
-			} catch (Exception e) {
-				System.out.println("dividede by zero exception");
-			}
-					if(slopAB == slopBC && slopBC  == slopAC) {
-						return true;
-				//System.out.println("points are collinear if formed by slope");
-			}else {
-				return false;
-
-				//System.out.println("points are not collinear formed by slope");
-
-			}
-
-		}
-		
-		
-		public static  boolean triangle(int x1, int x2, int x3, int y1, int y2, int y3) throws Exception{
-			int a = (x1 - x2);
-			int b = (x2 - x3);
-			int c = (y1 - y2);
-			int d = (y2 - y3);
-			
-			int determine = (a*d) - (b*c);
-			int triangle = (1/2)*determine;
-			
-			if(triangle == 0) {
-				return true;
-			}else {
-				return false;
-			}
-
-	}
+	      
 		
 	    
 }
