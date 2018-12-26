@@ -19,13 +19,13 @@ public class FindMinAndMaxValue {
 		
 		 //it will call maxValue(int n) method
 
-		int max = MathFunctions.toFindMinValue(n, arry);
-		System.out.println("Minimum value is : "+max);
+		int min = MathFunctions.toFindMinValue(n, arry);
+		System.out.println("Minimum value is : "+min);
 		
 		 //it will call minValue(int n) method
 
-		int min = MathFunctions.toFindMaxValue(n, arry);
-		System.out.println("Maximum value is : "+min );
+		int max = MathFunctions.toFindMaxValue(n, arry);
+		System.out.println("Maximum value is : "+max );
 
 		
 }

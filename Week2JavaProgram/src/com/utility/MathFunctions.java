@@ -81,7 +81,7 @@ static Scanner scan = new Scanner(System.in);
 		 * @return true if string is anagram and false if string is not anagram
 		 */
 		
-		public static boolean anagram(String input1, String input2) {
+		public static boolean isAnagram(String input1, String input2) {
 			
 	        //Remove all whitespace first
 
@@ -154,13 +154,13 @@ static Scanner scan = new Scanner(System.in);
 		 * @param r take integer from user
 		 */
 		
-		public static void toFindPermutation(String str, int l, int r) {
+		public static void findPermutation(String str, int l, int r) {
 			if(l==r) {
 				System.out.println(str);
 			}else {
 				for(int i = l ; i <= r; i++) {
 				str = swap(str , l ,i);
-				toFindPermutation(str , l+1, r);
+				findPermutation(str , l+1, r);
 				str = swap(str, l, i);
 
 			}
@@ -185,7 +185,15 @@ static Scanner scan = new Scanner(System.in);
 		 * @param string2 take string from user
 		 */
 		
-		public static void matchString(String string1, String string2) {
+		public static void matchString() {
+			String string1,string2;
+			System.out.println("Enter first string: ");
+
+			string1=scan.next();
+			System.out.println("Enter second string: ");
+
+			string2=scan.next();
+
 			if(string1.equals(string2)) {
 				System.out.println("Strings are equal");
 			}else {
@@ -432,25 +440,24 @@ static Scanner scan = new Scanner(System.in);
 		 * @return value by using formula
 		 */
 		
-		public static double futureValue(float c, float r, float t) {
+		public static double futureValue() {
 			double value;
-			float c1;
-			float r1;
-			float t1;
-			if(c<0 || r<0 || t<0) {
-				System.out.println("please enter positive value: ");
-				System.out.println("Enter invested dollars: ");
+			float c1,r1,t1;
+			System.out.println("please enter positive value: ");
+				System.out.println("Enter invested dollars($): ");
 				 c1 = MathFunctions.getFloat();
-				System.out.println("Enter interest rate: ");
+				System.out.println("Enter interest rate:() ");
 				r1 = MathFunctions.getFloat();
 				System.out.println("Enter time period: ");
 				t1 = MathFunctions.getFloat();
+				if(c1<0 || r1<0 || t1<0) {
+					futureValue();
 			}else {
-			 value = (c*Math.pow((1+r), t));
+			 value = (c1*Math.pow((1+r1), t1));
 				return value;
 
 			}
-			return MathFunctions.futureValue(c1 , r1, t1);
+			return MathFunctions.futureValue();
 
 
 			
@@ -465,25 +472,26 @@ static Scanner scan = new Scanner(System.in);
 		 * @return value by using formula
 		 */
 		
-		public static double presentValue(float c, float r, float t) {
+		public static double presentValue() {
 			double value;
-			float c1;
-			float r1;
-			float t1;
-			if(c<0 || r<0 || t<0) {
+			float c,r,t;
+			
 				System.out.println("please enter positive value: ");
 				System.out.println("Enter invest dollars: ");
-				 c1 = MathFunctions.getFloat();
+				 c = MathFunctions.getFloat();
 				System.out.println("Enter interest rate: ");
-				r1 = MathFunctions.getFloat();
+				r = MathFunctions.getFloat();
 				System.out.println("Enter time period: ");
-				t1 = MathFunctions.getFloat();
+				t = MathFunctions.getFloat();
+				if(c<0 || r<0 || t<0) {
+				                 presentValue();
+				                 
 			}else {
 			 value = (c/Math.pow((1+r), t));
 				return value;
 
 			}
-			return MathFunctions.futureValue(c1 , r1, t1);
+			return MathFunctions.presentValue();
 
 	}
 		/*************MathFunctions CheckColinear*****************/

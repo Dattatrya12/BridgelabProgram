@@ -7,9 +7,8 @@ public static void main(String[] args) {
 	    while(true)
 	    {
 	
-	System.out.println("Enter 1 for HarmonicNumber,Enter 2 for sinx,"
-			+"Enter 3 for cosx,"
-	+ " Enter 4 for Binary : ");
+	System.out.println("1.Enter 1 for HarmonicNumber \n2.Enter 2 for sinx Angle");
+	System.out.println("3.Enter value of cos Angle\n4.Enter Decimal Number ");
 	int x = MathFunctions.getInt();
 
 	switch (x) {
@@ -17,7 +16,7 @@ public static void main(String[] args) {
 		//HarmonicNumber
 		
 		//System.out.println("Enter any number : ");
-		System.out.println("enter n");
+		System.out.println("Enter value of n to Get harmonic number:");
 		int n = MathFunctions.getInt();
 		double sum =  MathFunctions.getHarmonic(n);
 		System.out.println(sum);
@@ -25,7 +24,7 @@ public static void main(String[] args) {
 		
 	case 2:	
 		//sinx
-	    System.out.println("Enter value of angle: ");
+	    System.out.println("Enter value of sin angle: ");
 		double x1 = MathFunctions.getDouble();
 		double x11 = MathFunctions.sinAngle(x1);
 		System.out.println("value of sin "+x1+" is : "+x11);
@@ -33,8 +32,8 @@ public static void main(String[] args) {
 
 	case 3: 
 		
-		//cosx
-		 System.out.println("Enter value of x: ");
+		
+		 System.out.println("Enter value of cos angle: ");
 		double xx = MathFunctions.getDouble();
 		double x2 = MathFunctions.cosAngle(xx);
 		System.out.println("value of cos "+xx+" is : "+x2);
