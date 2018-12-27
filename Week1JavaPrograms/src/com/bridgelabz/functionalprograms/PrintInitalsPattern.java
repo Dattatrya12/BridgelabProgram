@@ -85,6 +85,7 @@ public class PrintInitalsPattern {
 				}
 			}
 			System.out.println("");
+		
 			}
 				
 	}
@@ -98,7 +99,7 @@ public class PrintInitalsPattern {
 			while (reader.hasNext()){
 				str1 = reader.nextLine();
 
-			for(int j = 0 ; j<14 ; j++) {
+			for(int j = 0 ; j<28 ; j++) {
 				
 				char x = str1.charAt(j);
 				if(x=='1') {

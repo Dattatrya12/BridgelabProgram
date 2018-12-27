@@ -126,5 +126,23 @@ public class Utility {
 	           System.out.println();
 	       }
 	      
+	      /***************************BinarySearchProgram**********************/
+	    public static  int binarySearch(int arr[], int low, int high, int srch) 
+	      { 
+	          if (high >= low) { 
+	              int mid = low + (high - low) / 2; 
+	                if (arr[mid] == srch) 
+	                  return mid; 
+	                if (arr[mid] > srch) 
+	                  return binarySearch(arr, low, mid - 1, srch); 
+	            return binarySearch(arr, mid + 1, high, srch); 
+	          } 
+	    
+	          // We reach here when element is not present 
+	          // in array 
+	          return -1; 
+	      } 
+	    
+	      
 	    
 }
