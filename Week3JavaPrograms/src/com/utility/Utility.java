@@ -1052,6 +1052,28 @@ public class Utility  {
 					}
 					return false;
 			}
+				/******************Program to print Triplet****************/
+				public static void printTriplet(int[] array) {
+					
+			     	int size = array.length;
+					int count = 0;
+					
+					for(int i=0;i<size-2;i++) {
+						for(int j=i+1;j<size-1;j++) {
+							for(int k=j+1;k<size;k++) {
+								
+								if(array[i]+array[j]+array[k] == 0) {
+									System.out.println("Triplets are: " +array[i]+" "+array[j]+" " +array[k] );
+									count++;
+								}
+									
+								}
+							}
+						}
+					
+				
+				      	System.out.println("pair count is :"+count++);
+			}
 
 }
 
