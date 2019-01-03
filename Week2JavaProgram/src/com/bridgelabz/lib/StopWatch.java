@@ -1,4 +1,7 @@
 package com.bridgelabz.lib;
+import com.bridgelabz.lib.StopWatch;
+
+import com.utility.Utility;
 
 public class StopWatch 
 {
@@ -31,12 +34,11 @@ public class StopWatch
 		StopWatch sw=new StopWatch();
 		Utility u=new Utility();
 		System.out.println("Press '1' to Start Time: ");
-		Utility.getInt();
+		u.getInt();
 		sw.start();
 
 		System.out.println();
 		System.out.println("Press '2' to Stop Time: ");
-		u.getInt();
 		sw.stop();
 
 		long l=sw.getElapsedTime();

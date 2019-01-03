@@ -36,7 +36,7 @@ public class Utility {
 	   }
 	   public static float getFloat()
 	   {
-		   int floatValue=scanner.nextInt();
+		   float floatValue=scanner.nextFloat();
 		   return floatValue;
 	   }
 	   public static double getDouble()

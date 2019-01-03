@@ -1,6 +1,8 @@
 package com.bridgelabz.lib;
 import java.util.Random;
-import java.util.Scanner;
+import com.bridgelabz.lib.BLRandom;
+
+//import java.util.Scanner;
 
 public final class BLRandom {
 
