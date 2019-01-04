@@ -1074,7 +1074,22 @@ public class Utility  {
 				
 				      	System.out.println("pair count is :"+count++);
 			}
-
+           /*************Minor Matrix Program**********************/
+				public static void createMinor(int matrix[][], int minor[][], int row, int col) {
+				    int minor_row, minor_col;
+				    for (int i = 0; i < 3; i++) {
+				        minor_row = i;
+				        if (i>row)
+				            minor_row--;
+				        for (int j = 0; j < 3; j++) {
+				            minor_col = j;
+				            if (j>col)
+				                minor_col--;
+				            if (i != row && j != col)
+				                minor[minor_row][minor_col] = matrix[i][j];
+				        }
+				    }
+				}
 }
 
 	
