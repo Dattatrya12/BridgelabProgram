@@ -1090,6 +1090,350 @@ public class Utility  {
 				        }
 				    }
 				}
+				/***********program to print lyrics of poem**********/
+			    
+			    public static void printLyrics()
+			    {
+			    	String poem="Old MacDonald had a farm, E-I-E-I-O\n" + 
+			    			"And on his farm he had a <<ANIMAL>>, E-I-E-I-O\n" + 
+			    			"With a <<SOUND>> here and a <<SOUND>> there\n" + 
+			    			"Here a <<SOUND>>\n" + 
+			    			"There a <<SOUND>>\n" + 
+			    			"Everywhere <<SOUND>>\n" + 
+			    			"Old MacDonald had a farm, E-I-E-I-O";
+			    	
+			    	
+			    	for(int i=1;i<=9;i++)
+			    	{
+			    		if(i==1)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Chicks" ).replaceAll("<<SOUND>>","chick-chick");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		
+			    		if(i==2)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Duck" ).replaceAll("<<SOUND>>","Quack-quack");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		
+			    		if(i==3)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Turkey" ).replaceAll("<<SOUND>>","gobble-gobble");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==4)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Cow" ).replaceAll("<<SOUND>>","moo-moo");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==5)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Pig" ).replaceAll("<<SOUND>>","oink-oink");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==6)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Cat" ).replaceAll("<<SOUND>>","meow-meow");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==7)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Dog" ).replaceAll("<<SOUND>>","Bow-Bow");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==8)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Mule" ).replaceAll("<<SOUND>>","Heehaw-Heehaw");
+			    			System.out.println(fin+"\n");
+			    		}
+			    		if(i==9)
+			    		{
+			    			String fin=poem.replaceAll("<<ANIMAL>>","Turtle" ).replaceAll("<<SOUND>>","nerp-nerp");
+			    			System.out.println(fin);
+			    		}
+			    		
+			    	}
+			}
+			    /*********************Program for calendar****************/
+	    		
+	    		
+	    		public static void calender(int month, int year) {
+
+	    			String[] months = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September",
+	    					"Octomber", "November", "December" };
+	    			int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	    			if (month == 2)
+	    			{
+	    				if(year%4==0 || year%400==0 && year%100!=0)
+	    				days[month] = 29;
+	    			}
+	    			System.out.println("   " + months[month] + " " + year);
+	    			System.out.println("\tSun\tMon\tTue\tWed\tThu\tFri\tSat");
+	    			int d = Utility.day(month, 1, year); // d having value between 0 to 6
+	    			for (int i = 0; i < d; i++)
+	    				System.out.print("\t"); // till day we add space
+	    			for (int i = 1; i <= days[month]; i++) {
+	    				System.out.printf("\t" + i);
+	    				if (((i + d) % 7 == 0)) // next line
+	    					System.out.println();
+	    			}
+	    		}
+	    			
+
+	    		public static int day(int month, int day, int year) {
+	    			int y = year - (14 - month) / 12;
+	    			int x = y + y / 4 - y / 100 + y / 400;
+	    			int m = month + 12 * ((14 - month) / 12) - 2;
+	    			int d = (day + x + (31 * m) / 12) % 7;
+	    			return d;
+
+	    		}
+	    		/*********matric multiplication***************/
+	    		 
+	    		 public static void getMatricMultiplication()
+	    		 {
+	    		    	
+	    		    	int [][]array1 = new int [2][3];
+	    		    	  System.out.println("Enter element of matrix 1 :");
+	    		    	  
+	    		    	  for(int i=0;i<2;i++) 
+	    		    	  {
+	    		    		  for(int j=0;j<3;j++) 
+	    		    		  {
+	    		    			   array1[i][j] = Utility.getInt();
+	    		    		  }
+	    		    	  }
+	    		    	  System.out.println();
+	    		    	  
+	    		    	  System.out.println("your matrix:");
+	    		    	  for(int x=0;x<3;x++)
+	    		    	  {
+	    		    	  System.out.print("\tcol"+(x+1));
+	    		    	  }
+	    		    	  System.out.println();
+	    		    	  
+	    		    	  for(int i=0;i<2;i++)
+	    		    	  {
+	    		    		  System.out.print("row"+(i+1)+" ");
+	    		    		  for(int j=0;j<3;j++) 
+	    		    		  {
+	    		    			  System.out.print("\t "+array1[i][j]);
+	    		    			  
+	    		    		  }
+	    		    		  System.out.println();
+	    		    	  }
+	    		    	  
+	    		    	  
+
+	    		      	int [][]array2 = new int [3][2];
+	    		      	  System.out.println("\nEnter element of matrix 2 :");
+	    		      	  
+	    		      	  for(int i=0;i<3;i++) 
+	    		      	  {
+	    		      		  for(int j=0;j<2;j++) 
+	    		      		  {
+	    		      			   array2[i][j] = Utility.getInt();
+	    		      		  }
+	    		      	  }
+	    		      	  System.out.println();
+	    		      	  
+	    		      	  System.out.println("your matric:");
+	    		      	  for(int x=0;x<2;x++)
+	    		      	  {
+	    		      	  System.out.print("\tcol"+(x+1));
+	    		      	  }
+	    		      	  System.out.println();
+	    		      	  
+	    		      	  for(int i=0;i<3;i++)
+	    		      	  {
+	    		      		  System.out.print("row"+(i+1)+" ");
+	    		      		  for(int j=0;j<2;j++) 
+	    		      		  {
+	    		      			  System.out.print("\t "+array2[i][j]);
+	    		      			  
+	    		      		  }
+	    		      		  System.out.println();
+	    		      	  }
+	    		 	
+
+	    		 int res1=(array1[0][0]*array2[0][0])+(array1[0][1]*array2[1][0])+(array1[0][2]*array2[2][0]);
+
+	    		 int res2=(array1[0][0]*array2[0][1])+(array1[0][1]*array2[1][1])+(array1[0][2]*array2[2][1]);
+
+	    		 int res3=(array1[1][0]*array2[0][0])+(array1[1][1]*array2[1][0])+(array1[1][2]*array2[2][0]);
+
+	    		 int res4=(array1[1][0]*array2[0][1])+(array1[1][1]*array2[1][1])+(array1[1][2]*array2[2][1]);
+
+	    		 //int multiplication[][]=new int[2][2];
+	    		 System.out.println("\nmatric multiplication:");
+	    		 for(int x=0;x<2;x++)
+	    			  {
+	    			  System.out.print("\tcol"+(x+1));
+	    			  }
+	    			  System.out.println();
+	    		 System.out.print("row1\t"+res1+"\t"+res2+"\n");
+	    		 System.out.print("row2\t"+res3+"\t"+res4+"\n");
+	    		 
+	    		}
+	    /************************Program to demonstrate Gambling simulator using 2d array********/		 
+	    		 public static void gamblingSimulator()
+	    			{
+	    				int stake,goal,trails;
+	    				System.out.println("enter amount:");
+	    				stake=scanner.nextInt();
+	    				System.out.println("enter goal:");
+	    				goal=scanner.nextInt();
+	    				System.out.println("enter number of trails:");
+	    				trails=scanner.nextInt();
+	    				double array[][]=new double[trails][1];
+	    				int wins=0;
+	    				int loss=0;
+	    				
+	    					int cash = stake;
+	    					{
+	    						if(goal<=cash)
+	    						System.out.println("goal is less than or equal to cash");
+	    					
+	    						else 
+	    						{
+	    								for(int m=0;m<trails;m++)
+	    								{
+	    									double v=Math.random();
+	    									if(v< 0.5) 
+	    									{
+	    										array[m][0]=v;
+	    										loss++;	
+	    										cash=cash-100; //100 win amount
+	    									}	
+	    									else 
+	    									{
+	    										array[m][0]=v;
+	    										wins++;
+	    										cash=cash+100;
+	    									}
+	    								}
+	    					
+	    					System.out.println("\nresult of every trails is as:");
+	    						for(int i=0;i<trails;i++)
+	    						{
+	    							System.out.print((i+1)+")"+array[i][0]);
+	    							if(array[i][0]<0.5)
+	    								System.out.print("-> lost\n");
+	    							else
+	    								System.out.print("-> won\n");
+	    						}
+	    								
+	    						
+	    					if(cash==goal)
+	    						System.out.println("reached goal...");
+	    					else
+	    						System.out.println("can't reach the goal...");
+	    					double pw= (wins*100)/trails;
+	    					System.out.println(" win percentage="+pw);
+	    					double pl= (loss*100)/trails;
+	    					System.out.println(" loss percentage="+pl);
+	    					
+	    					
+	    					}
+	    				}
+	    				
+	    			}
+	    /*********program to demonstrate 2d array Rolling Die****************/		 
+	    		 public static void findRolledNumberFrequencyOnDice()
+	    			{
+	    				int count1=0,count2=0,count3=0,count4=0,count5=0,count6=0;
+	    				System.out.println("enter number of dice rolls:");
+	    				int n=scanner.nextInt();
+	    				Random dice = new Random();
+	    				
+	    				int a[]=new int[n];
+	    				int res[][]=new int[6][1];
+	    				System.out.println("Random numbers are as follows:");
+	    				for(int i = 0 ; i < n ; i++) 
+	    				{
+	    					int num=1+dice.nextInt(6);
+	    					System.out.print(num+" ");
+	    					for(int k = 0 ; k < n ; k++) 
+	    						{
+	    						a[k]=num;
+	    						}
+	    					
+	    					if (num==1) 
+	    					{
+	    						
+	    						count1++;
+	    						res[0][0]=count1;
+	    					}
+	    			
+	    					if (num==2) 
+	    					{
+	    						count2++;
+	    						res[1][0]=count2;
+	    					}
+	    					if (num==3)
+	    					{
+	    						count3++;
+	    						res[2][0]=count3;
+	    					}
+	    					if (num==4)
+	    					{
+	    						count4++;
+	    						res[3][0]=count4;
+	    					}
+	    					if (num==5)
+	    					{
+	    						count5++;
+	    						res[4][0]=count5;
+	    					}
+	    					if (num==6) 
+	    					{
+	    						count6++;
+	    						res[5][0]=count6;
+	    					}
+	    				}
+	    				System.out.print("\n");
+	    				for(int k=0;k<6;k++)
+	    				{
+	    					System.out.println((k+1)+" repeated "+res[k][0]+" times.");
+	    				}
+	    			
+	    				
+	    			}
+	    			
+	    			
+	    			/********************HARMONIC SERIES Program Using 2d Array*************/
+	    			public static void findHarmonicSeries()
+	    			{
+	    				System.out.println("how many harmonic series you want to print??????");
+	    				int x=scanner.nextInt();
+	    				double series[][]=new double[x][2];
+	    				
+	    				for(int a=1;a<=x;a++)
+	    				{
+	    				int n;
+	    				System.out.println("enter value of n:");
+	    				n=scanner.nextInt();
+	    			
+	    				series[a-1][0]=n;
+	    				double sum=0.0;
+	    				for(int i=1;i<=n;i++)
+	    					{
+	    					sum=sum+1.0/i;
+	    					}
+	    				series[a-1][0]=n;
+	    				series[a-1][1]=sum;
+	    				//System.out.println(a);
+	    			
+	    				}
+	    				
+	    				for(int i=1;i<=x;i++)
+	    				{
+	    					System.out.println("harmonic series for "+series[i-1][0]+" is "+series[i-1][1]);
+	    				}
+	    				
+	    		}
+
 }
 
 	
