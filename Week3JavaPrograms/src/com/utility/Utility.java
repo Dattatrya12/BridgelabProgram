@@ -493,47 +493,117 @@ public class Utility  {
 		}
 			/************************ method for regex *******************************************************/
 			
-			
-			public static String checkResult(String firstName, String lastName, String phoneNumber, String emailId, String userName, String passWord)
+			public static String checkFname()
 			{
-				boolean validation= false;
-				System.out.println("Enter first name of user:");
-				 while(validation !=true) {
-					  firstName = Utility.getString();
-					 validation = Utility.stringValidation(firstName);
-						if(validation == false)
-						{
-							System.out.println("Enter correct name");
-						}
-						return firstName;
-					}
-				 
-				 validation = false;
-					System.out.println("Enter last name");
-					while(validation != true)
-					{
-					 lastName =Utility.getString();
-						validation = Utility.stringValidation(lastName);
-						if(validation == false)
-						{
-							System.out.println("please Enter correct Lastname");
-						}
-					}
+		    	String firstName;
+				System.out.println("Enter first name:");
+				firstName=scanner.next();
+				String regex ="[a-zA-z]+";
+		    	if(firstName.matches(regex) == true)
+		    	{
+		    		return firstName;
+		    	}
+		    	else
+		    	{
+		    		System.out.println("invalid first name");
+		    		checkFname();
+		    	}
+		    	return "invalid";
+			}
+			
+		    
+		    public static String checkLname()
+		   	{
+		       	String lastName;
+		   		System.out.println("Enter last:");
+		   		lastName=scanner.next();
+		   		String regex ="[a-zA-z]+";
+		       	if(lastName.matches(regex) == true)
+		       	{
+		       		return lastName;
+		       	}
+		       	else
+		       	{
+		       		System.out.println("invalid last name");
+		       		checkLname();
+		       	}
+		       	return "invalid";
+		   	}
+				
+			
+		    public static String checkPhoneNumber()
+		   	{
+		       	String phoneNumber;
+		   		System.out.println("Enter mobile number:");
+		   		phoneNumber=scanner.next();
+		   		String regex ="[0-9]{10}$";
+		       	if(phoneNumber.matches(regex) == true)
+		       	{
+		       		return phoneNumber;
+		       	}
+		       	else
+		       	{
+		       		System.out.println("invalid number");
+		       		checkPhoneNumber();
+		       	}
+		       	return "invalid";
+		   	}
 			
 
-		       validation = false;
-			System.out.println("Enter user phone number");
-			while(validation != true)
-			{
-				 phoneNumber = Utility.getString();
-				validation = Utility.contactValidation(phoneNumber);
-				if(validation == false)
+		    public static String checkEmail(String email)
+		   	{
+		    	
+		      String regex ="^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
+		       	if(email.matches(regex) == true)
+		       	{
+		       		return email;
+		       	}
+		       	else
+		       	{
+		       		System.out.println("invalid email");
+		       		
+		       	}
+		       	return "invalid";
+		   	}
+			
+		    public static String checkUserId()
+		   	{
+		       	String id;
+		   		System.out.println("Enter user id:");
+		   		id=scanner.next();
+		   		String regex ="[0-9a-zA-Z]+";
+		       	if(id.matches(regex) == true)
+		       	{
+		       		return id;
+		       	}
+		       	else
+		       	{
+		       		System.out.println("invalid user id");
+		       		checkUserId();
+		       	}
+		       	return "invalid";
+		   	}
+			
+		    public static String checkPassword()
+		   	{
+		       	String password;
+		   		System.out.println("Enter password of user:");
+		   		password=scanner.next();
+		   		String regex ="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+		   		{
+				if(password.matches(regex) == true) 
 				{
-					System.out.println("please Enter correct phone number");
-				}
-			}
-			return phoneNumber;
-			}
+		       		return password;
+		       	}
+		       	else
+		       	{
+		       		System.out.println("invalid");
+		       		checkPassword();
+		       	}
+		   		}
+		       	return "invalid";
+		   	}
+
 			
 			
 			//********************** method for Replacement *********************************//
@@ -1393,8 +1463,11 @@ public class Utility  {
 	    					}
 	    				}
 	    				System.out.print("\n");
+	    				
 	    				for(int k=0;k<6;k++)
 	    				{
+	    					if(res[k][0]==0)
+	    						continue;
 	    					System.out.println((k+1)+" repeated "+res[k][0]+" times.");
 	    				}
 	    			
@@ -1433,6 +1506,67 @@ public class Utility  {
 	    				}
 	    				
 	    		}
+              public static int perf(int n)
+              {
+            	  int perf=1;
+            	  for(int i=1;i<=n/2;i++)
+            	  {
+            		  if(n%i==0)
+            		  {
+            			  perf=perf+i;
+            		  }
+            	  }
+              
+              return perf;
+}
+              /******************Birthdate of 50 individuals*************/
+              public static void getBirthDate(int maximum, int minimum)
+          	{
+          		int st[][]=new int[50][3];
+          		
+          		for(int i=0;i<50;i++) 
+          		{
+          		int n= ((int) (Math.random()*(maximum - minimum))) + minimum;
+          		st[i][0]=n;
+          		}
+          		
+          		//month
+          		int min=1,max=13;
+          		for(int j=0;j<50;j++) 
+          		{
+          		int n= ((int) (Math.random()*(max - min))) + min;
+          		st[j][1]=n;
+          		}
+          		
+          		//year
+          		int min1=1992,max1=1994;
+          		for(int j=0;j<50;j++) 
+          		{
+          		int n= ((int) (Math.random()*(max1 - min1))) + min1;
+          		
+          		st[j][2]=n;
+          		}
+          		
+          		//display
+          		
+          		System.out.print("Date\tMonth\tYear\n");
+          		for(int k=0;k<50;k++)
+          		{
+          			for(int l=0;l<3;l++) 
+          			{
+          			if(st[k][l]>=28 && st[k][1]==2 )
+          				st[k][l]=st[k][l]-2;
+          			
+          			if(st[k][2]<1992)
+          				st[k][2]=1993;
+          			System.out.print(st[k][l]+"\t");
+          			}
+          			System.out.println();
+          		}
+          		
+          		
+          		
+          	}
 
 }
 

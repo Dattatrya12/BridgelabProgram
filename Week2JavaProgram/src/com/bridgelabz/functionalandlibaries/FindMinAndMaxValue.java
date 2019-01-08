@@ -1,9 +1,12 @@
 package com.bridgelabz.functionalandlibaries;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import com.utility.MathFunctions;
 
 public class FindMinAndMaxValue {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		//take any random value from user
 		
@@ -26,7 +29,6 @@ public class FindMinAndMaxValue {
 
 		int max = MathFunctions.toFindMaxValue(n, arry);
 		System.out.println("Maximum value is : "+max );
-
 		
 }
 }
