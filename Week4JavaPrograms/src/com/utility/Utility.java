@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class Utility {
@@ -149,7 +150,9 @@ public class Utility {
 		}
 			/**********Program to stats using file
 			 * @return **********************/
+			
 			public static int getStats5(int r, int s) {
+			
 	    		double average;
 	    		double sum = 0;
 	    		double values[]=new double[5];
@@ -163,7 +166,9 @@ public class Utility {
 	    		
 	    		//to find average
 	    		
-	    		for(int i = 0 ; i < values.length ; i++) {
+	    		
+	    	
+				for(int i = 0 ; i < values.length ; i++) {
 	    			sum = sum+values[i];
 	    		}
 	    		average = sum/5;
@@ -226,6 +231,13 @@ public static int[][] trasposDemo(int row,int col){
 				return newArr ;
 			
 		}
+            public static int increment(int a)
+            {
+            	a++;
+            	System.out.println(a);
+            	return a;
+            }
+           
 			
 	          		
 	          		
