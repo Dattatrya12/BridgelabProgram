@@ -7,6 +7,11 @@ import java.io.IOException;
 import java.util.Formatter;
 import java.util.Scanner;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+
 public class Utility {
               static Scanner scanner=new Scanner(System.in);
             public static int getInt()
@@ -231,17 +236,86 @@ public static int[][] trasposDemo(int row,int col){
 				return newArr ;
 			
 		}
+public static int countWays(int n) 
+{ 
+    int[] res = new int[n + 1]; 
+    res[0] = 1; 
+    res[1] = 1; 
+    res[2] = 2; 
+
+    for (int i = 3; i <= n; i++) 
+        res[i] = res[i - 1] + res[i - 2] 
+                            + res[i - 3]; 
+
+    return res[n]; 
+} 
             public static int increment(int a)
             {
             	a++;
             	System.out.println(a);
             	return a;
             }
-           
+            public static void inventoryDetails()
+        	{
+        		JSONParser parser = new JSONParser();
+        		try
+        		{
+        			//Read json file and stored in json object
+        			JSONObject obj =(JSONObject) parser.parse(new FileReader("InventoryJson.json"));
+        			System.out.println(obj);
+        			//getting price of rice
+        			JSONObject jsonobj1 =  (JSONObject) obj.get("Rice");
+        			System.out.println("\n******Rice Details*****\n"+jsonobj1);
+        		    Object riceprice = jsonobj1.get("Price").toString();
+        		    //getting total weight of rice means how much rice is available
+        		    JSONObject jsonobj2 =  (JSONObject) obj.get("Rice");				
+        		    Object riceweight = jsonobj2.get("Weight").toString();
+        		    System.out.println("\nTotal Rice Stock   :"+Integer.parseInt( jsonobj1.get("Price").toString())*
+        		    		(Integer.parseInt( jsonobj2.get("Weight").toString())));
+        		   
+        		    //getting price of pulses
+        		    JSONObject jsonobj3 =  (JSONObject) obj.get("Pulses");
+        			System.out.println("\n******Pulses Details*****\n"+jsonobj3);
+        		    Object pulsesprice = jsonobj3.get("Price").toString();
+        		    //getting weight of pulses 
+        		    JSONObject jsonobj4 =  (JSONObject) obj.get("Pulses");				
+        		    Object pulsesweight = jsonobj4.get("Weight").toString();
+        		    System.out.println("\nTotal Pulses Stock   :"+Integer.parseInt( jsonobj3.get("Price").toString())*
+        		    		(Integer.parseInt( jsonobj4.get("Weight").toString())));
+        		    //getting details of wheats 
+        		    JSONObject jsonobj5 =  (JSONObject) obj.get("Wheats");
+        			System.out.println("\n******Wheats Details*****\n"+jsonobj5);
+        		    Object wheatsprice = jsonobj5.get("Price").toString();
+        		    
+        		    JSONObject jsonobj6 =  (JSONObject) obj.get("Wheats");				
+        		    Object wheatsweight = jsonobj6.get("Weight").toString();
+        		    System.out.println("\nTotal Wheats Stock   :"+Integer.parseInt( jsonobj5.get("Price").toString())*
+        		    		(Integer.parseInt( jsonobj6.get("Weight").toString())));
+        		}
+        		catch(Exception e)
+        		{
+        			System.out.println(e);
+        		}		
+        	}
+            public static void stockDetails()
+            {
+            	JSONParser parser = new JSONParser();
+        		try
+        		{
+            	JSONObject obj =(JSONObject) parser.parse(new FileReader("stock.json"));
+    			System.out.println(obj);
+        		}
+        		catch(Exception e)
+        		{
+        			System.out.println(e);
+        		}	
 			
+            }
+
+}
+
 	          		
-	          		
-	          	}
+	          	
 			
 
 
