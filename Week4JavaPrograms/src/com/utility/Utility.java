@@ -304,14 +304,15 @@ public static int countWays(int n)
         		{
             	JSONObject obj =(JSONObject) parser.parse(new FileReader("stock.json"));
     			System.out.println(obj);
+    			
         		}
         		catch(Exception e)
         		{
         			System.out.println(e);
-        		}	
-			
-            }
+        		}
+        		
 
+            }
 }
 
 	          		

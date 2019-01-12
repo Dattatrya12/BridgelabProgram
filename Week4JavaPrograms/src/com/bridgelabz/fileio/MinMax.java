@@ -8,7 +8,7 @@ public class MinMax {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Enter Any value: ");
+		System.out.println("Enter size of the array: ");
 		int n = Utility.getInt();
 		int [] arry = new int[n];
 
@@ -28,8 +28,8 @@ public class MinMax {
 		int max = Utility.toFindMaxValue(n, arry);
 		System.out.println("Maximum value is : "+max );
 		FileWriter fw=new FileWriter("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/MinMax.txt");    
-        fw.write("min="+min+" max="+max);    
-        fw.close(); 
+        fw.write("min="+min+" max="+max); 
+         fw.close(); 
 		
 
 	}

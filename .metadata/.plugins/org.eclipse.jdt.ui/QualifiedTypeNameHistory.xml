@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
 <fullyQualifiedTypeName name="com.utility.Utility"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
 </qualifiedTypeNameHistroy>
