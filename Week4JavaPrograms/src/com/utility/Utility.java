@@ -102,106 +102,148 @@ public class Utility {
 
                }
 	        }
+		  /*********************minimum and maximum from file
+		   * @throws IOException **********/
 
-			/**
-			 * @param n taking integer from user
-			 * @param taking list of array from user 
-			 * @return minimum value 
-			 * @throws IOException 
-			 */
-			
-			public static int toFindMinValue(int n, int[] arry) throws IOException {
-				/*Scanner file = new Scanner(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/MinMax.txt"));
-				   String line = "";
-			        while(file.hasNextLine())           
-			        {*/
-				int temp;
-				
-				
-				
-				for(int i = 0 ; i <  arry.length ; i++ ) {
-					for(int j = i+1 ; j < arry.length ; j++) {
-						if(arry[i] > arry[j]) {
-							temp = arry[i];
-							arry[i] = arry[j];
-							arry[j] = temp;
-		 				}
+		  public static void getMinimumMaximum() throws IOException
+		  {
+		  	Scanner file=new Scanner(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/MinMaxInput.txt"));
+		  	
+		  	int arr[]=new int[6];
+		  	//read from file
+		  	while(file.hasNext())
+		  	{
+		  	
+		  	for(int i=0;i<6;i++)
+		  	{
+		  		String n=file.nextLine();
+		  		int a=Integer.parseInt(n);
+		  		arr[i]=a;
+		  	}
+		  	
+		  	}
+		  	file.close();
+		  	
+		  	FileWriter fw=new FileWriter(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/MinMaxOutput.txt"));
+		  	//compare to find min 
+		  	int temp=arr[0];
+		  	for(int i=1;i<arr.length;i++)
+		  	{
+		  		if(arr[i]<temp)
+		  		{
+		  		temp=arr[i];
+		  		}
+		  	}
+		  	System.out.println("minimum is:"+temp);
+		  	fw.write("minimum is:"+temp+"\n");
+		  	
+		  	//max
+		  	int temp1=arr[0];
+		  	for(int i=1;i<arr.length;i++)
+		  	{
+		  		if(arr[i]>temp1)
+		  		{
+		  		temp1=arr[i];
+		  		}
+		  	}
+		  	System.out.println("maximum is:"+temp1);
+		  	fw.write("maximum is:"+temp1);
+		  	fw.close();
+		  	file.close();
+		  }
 
+		   /****************birth dates************/
+			public static void getBirthDate(int maximum, int minimum) throws IOException
+			{
+				FileWriter fw=new FileWriter(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/birthdates.txt"));
+				int st[][]=new int[50][3];
+				
+				//date
+				for(int i=0;i<50;i++) 
+				{
+				int n= ((int) (Math.random()*(maximum - minimum))) + minimum;
+				st[i][0]=n;
+				}
+				
+				//month
+				int min=1,max=13;
+				for(int j=0;j<50;j++) 
+				{
+				int n= ((int) (Math.random()*(max - min))) + min;
+				st[j][1]=n;
+				}
+				
+				//year
+				int min1=1992,max1=1994;
+				for(int j=0;j<50;j++) 
+				{
+				int n= ((int) (Math.random()*(max1 - min1))) + min1;
+				
+				st[j][2]=n;
+				}
+				
+				//display
+				
+				fw.write("\tDate\tMonth\tYear\n");
+				for(int k=0;k<50;k++)
+				{
+					fw.write((k+1)+":\t");
+					for(int l=0;l<3;l++) 
+					{
+					if(st[k][l]>=28 && st[k][1]==2 )
+						st[k][l]=st[k][l]-2;
+					
+					if(st[k][2]<1992)
+						st[k][2]=1993;
+					String newArr =(Integer.toString(st[k][l])+"\t\t");
+					fw.write(newArr);
+					
 					}
-						
-						}
-				
-				return arry[0];
-			        }
-						
-		
-			/**
-			 * @param n take integer from user
-			 * @param take list of array from user
-			 * @return maximum value 
-			 */
-			
-			public static int toFindMaxValue(int n, int[] arry) {
-				int max = arry[0];
-				
-				
-				for(int i = 0 ; i <  arry.length ; i++ ) {
-						if(arry[i] > max) {
-							max = arry[i];
-						}
+					fw.write("\n");
 					
 				}
-				return max;
-		}
-			/**********Program to stats using file
-			 * @return **********************/
-			
-			public static int getStats5(int r, int s) {
-			
-	    		double average;
-	    		double sum = 0;
-	    		double values[]=new double[5];
-	    	
-	    		//to find random value
-	    		
-	    		for(int i = 0 ; i < values.length ; i++) {
-	    			values[i] = Math.random();
-	    		System.out.println(values[i]);
-	    		}
-	    		
-	    		//to find average
-	    		
-	    		
-	    	
-				for(int i = 0 ; i < values.length ; i++) {
-	    			sum = sum+values[i];
-	    		}
-	    		average = sum/5;
-	    		System.out.println("average is: "+average);
-	    		
-	    		//to find maximum value
-	  
-	    		double max = values[0];
-	    		for(int i = 0 ; i < values.length ; i++) {
-	    			 if(values[i]>max) {
-	    				 max = values[i];
-	    			 }
-	    			 }
-	    		System.out.println("Maximum value is: "+max);
+				fw.close();
+			}
 
-	    		//to find minimum value
-	    		
-	    		double min = values[0];
-	    		for(int i = 0 ; i < values.length ; i++) {
-	    			 if(values[i]<min) {
-	    				  min = values[i];
-	    			 }
-	    			 }
-	    		System.out.println("Minimum value is: "+min);
-				return s;
+
+			/*******************average of floting point numbers in file
+			 * @throws IOException *********/
+
+			public static void getAverage() throws IOException
+			{
+				Scanner file=new Scanner(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/averageInput.txt"));
+				float arr[]=new float[10];
+				while(file.hasNextLine())
+				{
+					for(int i=0;i<10;i++)
+					{
+						String input=file.nextLine();
+						float n=Float.parseFloat(input);
+						arr[i]=n;
+					}
+				}
+				file.close();
 				
+				FileWriter fw=new FileWriter(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/averageOutput.txt"));
+				int count=0;
+				float sum=0;
+				for(int i=0;i<arr.length;i++)
+				{
+					count++;
+					sum=sum+arr[i];
+				}
+				System.out.println("sum:"+sum);
 				
-	    }
+				float average=sum/count;
+				System.out.println("average of is:"+average);
+				fw.write("average:"+average);
+				fw.close();
+			}
+
+
+
+			
+			
 public static int[][] trasposDemo(int row,int col){
 				
 				int [][]array = new int [row][col];

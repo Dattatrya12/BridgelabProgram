@@ -3,13 +3,14 @@
 <fullyQualifiedTypeName name="com.utility.MathFunctions"/>
 <fullyQualifiedTypeName name="com.bridgelabz.lib.Utility"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.util.Formatter"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
-<fullyQualifiedTypeName name="com.utility.Utility"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.utility.Utility"/>
+<fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 </qualifiedTypeNameHistroy>

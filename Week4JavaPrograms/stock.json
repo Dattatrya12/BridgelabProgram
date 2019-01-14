@@ -1,28 +1,7 @@
-{
-	"Stock" :[{
-			"Stock Name" : "Google" ,
-			 "No of share" : 40 , 
-			"Share price": 35600
-		},
-
-		{
-			"Stock Name" : "HDFC" ,
-			 "No of share" : 42 ,
-			 "Share price": 25100
-		},
-		{
-			"Stock Name" : "Infosys" ,
-			"No of share" : 35 , 
-			"Share price": 42360
-		},
-		{	
-			"Stock Name" : "TV18" , 
-			"No of share" : 39 ,
-			"Share price": 30250
-		},
-		{
-			"Stock Name" : "Amazon" , 
-			"No of share" : 38 , 
-			"Share price": 25100
-		}]
-}
+[{"name":"tata","number":33,"price":2055},
+{"name":"reliance","number":43,"price":1300},
+{"name":"jio","number":45,"price":2323},
+{"name":"ufc","number":32,"price":430},
+{"name":"jaguar","number":67,"price":320},
+{"name":"rtrty","number":87,"price":400},
+{"name":"fgdf","number":99,"price":900}]
