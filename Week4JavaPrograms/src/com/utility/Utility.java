@@ -16,7 +16,7 @@ public class Utility {
               static Scanner scanner=new Scanner(System.in);
             public static int getInt()
 		   {
-			   int integerValue=scanner.nextInt();
+			   int integerValue=Integer.parseInt(scanner.nextLine());
 			   return integerValue;
 		   }
 		   public static float getFloat()
@@ -34,9 +34,9 @@ public class Utility {
 			   String stringValue=scanner.nextLine();
 			   return stringValue;
 		   }
-		   public static double getLong()
+		   public static Long getLong()
 		   {
-			   double longValue=scanner.nextLong();
+			   long longValue=scanner.nextLong();
 			   return longValue;
 		   }
 
