@@ -80,10 +80,9 @@ class AddressBookManager  implements manager {
 		person.setLastName(lastName);
 		person.setAddress(address);
 		person.setPhoneNumber(phone);
-		System.out.println("press "+"$"+"to save details");
-		System.out.println("");
+		System.out.println("press "+"YES"+"to save details");
 		String save = Utility.getString();
-		if(save.equals("$"))
+		if(save.equals("YES"))
 		{
 			AddressBookManager manager = new AddressBookManager();
 			manager.save1(person, addressBook);

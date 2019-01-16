@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.utility.MathFunctions"/>
 <fullyQualifiedTypeName name="com.bridgelabz.lib.Utility"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.util.Formatter"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -13,7 +12,8 @@
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.JsonGenerationException"/>
 <fullyQualifiedTypeName name="com.bridgelabz.bean.Employee"/>
-<fullyQualifiedTypeName name="com.utility.Utility"/>
 <fullyQualifiedTypeName name="com.bridgelabz.oop.PojoInventory"/>
 <fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.utility.Utility"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

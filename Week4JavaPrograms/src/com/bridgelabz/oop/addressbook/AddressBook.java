@@ -11,9 +11,9 @@ public class AddressBook {
 		String firstName;
 		String lastName;
 		AddressBookManager manager = new AddressBookManager();
-        int repeat = 1 ;
+        String repeat = "";
        //manager.printDetails();
-        while(repeat == 1)
+        while(repeat != "YES")
         {
         	System.out.println("Menu:");
     		System.out.println("1. create new address book");
@@ -119,9 +119,9 @@ public class AddressBook {
       
         	
         System.out.println("To continue press 1 \n and for exit press any number ");
-        repeat = Utility.getInt();
+        repeat = Utility.getString();
 	}
-        if(repeat != 1)
+        if(repeat == "YES")
         {
         	System.out.println("Exit");
         }
