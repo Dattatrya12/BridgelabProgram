@@ -9,11 +9,11 @@
 <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
 <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.JsonGenerationException"/>
 <fullyQualifiedTypeName name="com.bridgelabz.bean.Employee"/>
 <fullyQualifiedTypeName name="com.utility.Utility"/>
 <fullyQualifiedTypeName name="com.bridgelabz.oop.PojoInventory"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>

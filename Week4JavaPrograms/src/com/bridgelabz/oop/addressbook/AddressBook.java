@@ -42,13 +42,13 @@ public class AddressBook {
         		firstName = Utility.getString();
         		System.out.println("Enter person last name: ");
         		lastName = Utility.getString();
-        		manager.addPersonInAddressBook(addressBookName, firstName, lastName);
+        		AddressBookManager.addPersonInAddressBook(addressBookName, firstName, lastName);
         		break;
         case 3: 
         	    	System.out.println("Enter address book");
         	    	addressBookName = Utility.getString();
-        	    	boolean exist = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBookName+".json").exists();
-        	    	long fileLength = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBookName+".json").length();
+        	    	boolean exist = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBookName+".json").exists();
+        	    	long fileLength = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBookName+".json").length();
         	    	if(exist == false || fileLength == 0)
         	    	{
         	    		System.out.println("invalid choice");

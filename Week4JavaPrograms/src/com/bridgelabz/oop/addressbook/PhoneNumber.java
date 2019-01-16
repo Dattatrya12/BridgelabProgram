@@ -2,17 +2,17 @@ package com.bridgelabz.oop.addressbook;
 
 public class PhoneNumber 
 {
-	long mobileNumber;
+	String mobileNumber;
 	Long landlineNumber;
 	@Override
 	public String toString() {
 		return "PhoneNumber [mobileNumber=" + mobileNumber + ", landlineNumber=" + landlineNumber + "]";
 	}
-	public long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(long mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setMobileNumber(String phoneNumber) {
+		this.mobileNumber = phoneNumber;
 	}
 	public Long getLandlineNumber() {
 		return landlineNumber;

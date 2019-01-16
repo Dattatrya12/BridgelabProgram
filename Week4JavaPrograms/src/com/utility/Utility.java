@@ -355,6 +355,10 @@ public static int countWays(int n)
         		
 
             }
+			public static void prinStringArray(String[] cards) {
+				// TODO Auto-generated method stub
+				
+			}
 }
 
 	          		

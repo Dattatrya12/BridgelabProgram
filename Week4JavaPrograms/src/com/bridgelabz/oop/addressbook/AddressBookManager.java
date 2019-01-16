@@ -62,7 +62,7 @@ class AddressBookManager  implements manager {
 		int zip =  Utility.getInt();
 		
 		System.out.println("Enter mobile number:");
-		long phoneNumber =  (Long)Utility.getLong();
+		String phoneNumber =  Utility.getString();
 		
 		System.out.println("press 1 to add landLine ");
 		int choice =  Utility.getInt();
@@ -97,7 +97,7 @@ class AddressBookManager  implements manager {
     	int tempCount = 0 ;	
     	String temp = "";
     	int stop = 0 ;
-    	LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
+    	LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
     	for(PersonDetails person: details)
 		{
     		if(person.getFirstName().equals(name))
@@ -161,7 +161,7 @@ class AddressBookManager  implements manager {
     		if(choice == 5)
     		{
     			System.out.println("Enter mobile number:");
-    			Long phoneNumber =  (Long) Utility.getLong();
+    			String phoneNumber =   Utility.getString();
     			
     			System.out.println("press 1 to add landLine ");
     			choice =  Utility.getInt();
@@ -179,20 +179,20 @@ class AddressBookManager  implements manager {
     	}
     	if(stop == 2)
     	{
-    		mapper.writeValue(new File("/home/bridgeit/Documents/json/addressbook/"+addressBook+".json"), details);
+    		mapper.writeValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"), details);
     	}
 	}
 	
 	public  void save1(PersonDetails person,String addressBook) throws JsonGenerationException, JsonMappingException, IOException
 	{
 		
-		if(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json").length() == 0)
+		if(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json").length() == 0)
 		{
 		LinkedList<PersonDetails> newPerson = new LinkedList<>();
 		newPerson.add(person);
 		System.out.println(newPerson);
-		mapper.writeValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json"), newPerson);
-		if(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json").length() != 0)
+		mapper.writeValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"), newPerson);
+		if(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json").length() != 0)
 		{
 			System.out.println("data successfully store in file");
 		}
@@ -203,8 +203,8 @@ class AddressBookManager  implements manager {
 		}
 		else
 		{
-			long preFileLength = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json").length();
-		LinkedList<PersonDetails> multiple= mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json"),new TypeReference<LinkedList<PersonDetails>>() {});
+			long preFileLength = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json").length();
+		LinkedList<PersonDetails> multiple= mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"),new TypeReference<LinkedList<PersonDetails>>() {});
 		multiple.add(person);
 		mapper.writeValue(new File("/home/bridgeit/Documents/json/addressbook/"+addressBook+".json"),multiple);
 		
@@ -223,7 +223,7 @@ class AddressBookManager  implements manager {
 	}
 
 	public void delete(String name, String addressBook) throws JsonParseException, JsonMappingException, IOException {
-		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
+		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
 		int count = 0 ;
 		boolean result = true;
 		for(PersonDetails person: details)
@@ -249,7 +249,7 @@ class AddressBookManager  implements manager {
 	
 	public void sortByName(String bookName ) throws JsonParseException, JsonMappingException, IOException {
 	
-		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+bookName+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
+		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+bookName+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
 		LinkedList<String> name = new LinkedList<>();
 		int count = 0;
 		for(PersonDetails person :details)
@@ -288,7 +288,7 @@ class AddressBookManager  implements manager {
 	}
 	
 	public void sortByZip(String bookName) throws JsonParseException, JsonMappingException, IOException {
-		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+bookName+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
+		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+bookName+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
 		LinkedList<Integer> zip = new LinkedList<>();
 		int count = 0;
 		for(PersonDetails person :details)
@@ -327,7 +327,7 @@ class AddressBookManager  implements manager {
 	
 	public void print(String addressBook,String name) throws JsonParseException, JsonMappingException, IOException 
 	{
-		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
+		LinkedList <PersonDetails> details = mapper.readValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+addressBook+".json"), new TypeReference<LinkedList<PersonDetails>>() {});
 		for(PersonDetails person: details)
 		{
 			if(person.getFirstName().equals(name))
@@ -339,8 +339,8 @@ class AddressBookManager  implements manager {
 
 	public void saveAs(String oldName,String newName,String extension)
 	{
-		File file1 = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+oldName+".json");
-		File file2 = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/addressbook/"+newName+"."+extension);
+		File file1 = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+oldName+".json");
+		File file2 = new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/"+newName+"."+extension);
 	
 		boolean result = file1.renameTo(file2);
 		if(result == false )
