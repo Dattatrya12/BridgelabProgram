@@ -119,7 +119,7 @@ class AddressBookManager  implements manager {
     		details.get(tempCount).setFirstName(firstName);
     		break;
     	case 2:
-    		System.out.println("Enter new first name :");
+    		System.out.println("Enter new last name :");
     		lastName = Utility.getString();
     		details.get(tempCount).setLastName(lastName);
     		break;

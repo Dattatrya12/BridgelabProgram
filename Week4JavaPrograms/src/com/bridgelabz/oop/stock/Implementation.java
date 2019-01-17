@@ -152,7 +152,7 @@ public static void buy(String name,String symbol,int amount,String file) throws 
        
          
        mapper.writeValue(new File(file), transaction);
-        mapper.writeValue(new File("/home/bridgeit/Documents/json/share/user.json"), user);
+        mapper.writeValue(new File("/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/user.json"), user);
       //update COMPANY share
         company.get(tempCountComp).setShare(companyShareNumber);
         mapper.writeValue(new File("/home/bridgeit/Documents/json/share/company.json"), company);
@@ -160,9 +160,9 @@ public static void buy(String name,String symbol,int amount,String file) throws 
 public static void sell(String name,String Symbol,int amount  ) throws JsonParseException, JsonMappingException, IOException
 {
 	 //copy file path into string
-	String userFile = "/home/bridgeit/Documents/json/share/user.json";
-	String companyFile = "/home/bridgeit/Documents/json/share/company.json";
-	String transactionFile = "/home/bridgeit/Documents/json/share/transaction.json";
+	String userFile = "/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/user.json";
+	String companyFile = "/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/company.json";
+	String transactionFile = "/home/admin1/Desktop/JavaPrograms/Week4JavaPrograms/transaction.json";
 	//for desire transaction
 	Transaction userTransaction = new Transaction();
 //for counter use

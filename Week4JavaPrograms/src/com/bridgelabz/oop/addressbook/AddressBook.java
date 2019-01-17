@@ -42,7 +42,7 @@ public class AddressBook {
         		firstName = Utility.getString();
         		System.out.println("Enter person last name: ");
         		lastName = Utility.getString();
-        		AddressBookManager.addPersonInAddressBook(addressBookName, firstName, lastName);
+        		manager.addPersonInAddressBook(addressBookName, firstName, lastName);
         		break;
         case 3: 
         	    	System.out.println("Enter address book");
